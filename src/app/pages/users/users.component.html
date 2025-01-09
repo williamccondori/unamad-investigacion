@@ -1,0 +1,42 @@
+<div class="app-space">
+  <nz-page-header (nzBack)="onBack()" nzBackIcon nzTitle="Usuario">
+  </nz-page-header>
+  <section>
+    <button nz-button nzType="primary" (click)="onAdd()">
+      <span nz-icon nzType="plus"></span>
+      Agregar usuario
+    </button>
+  </section>
+  <nz-table #basicTable [nzData]="users" [nzBordered]="true" nzSize="small">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido paterno</th>
+      <th>Apellido materno</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (user of users; track user.id) {
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.lastName2 }}</td>
+          <td>
+            <nz-space>
+              <button nz-button nzType="link" nzSize="small">
+                <span nz-icon nzType="edit"></span>
+                Editar
+              </button>
+              <button nz-button nzType="link" nzSize="small" nzDanger>
+                <span nz-icon nzType="delete"></span>
+                Eliminar
+              </button>
+            </nz-space>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </nz-table>
+</div>
+

@@ -1,0 +1,15 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="onSubmit()">
+  <nz-form-item>
+    <nz-form-label nzRequired>Nombre</nz-form-label>
+    <nz-form-control nzErrorTip="Ingrese el nombre">
+      <input nz-input formControlName="name" placeholder="Ingrese el nombre"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzRequired>Descripción</nz-form-label>
+    <nz-form-control nzErrorTip="Ingrese la descripción">
+      <textarea nz-input formControlName="description" placeholder="Ingrese la descripción"></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  <button nz-button nzType="primary" type="submit">Guardar</button>
+</form>

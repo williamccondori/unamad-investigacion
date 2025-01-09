@@ -1,0 +1,40 @@
+<div class="app-space">
+  <nz-page-header (nzBack)="onBack()" nzBackIcon nzTitle="Roles">
+  </nz-page-header>
+  <section>
+    <button nz-button nzType="primary" (click)="onAdd()">
+      <span nz-icon nzType="plus"></span>
+      Agregar rol
+    </button>
+  </section>
+  <nz-table #basicTable [nzData]="roles" [nzBordered]="true" nzSize="small">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (role of roles; track role.id) {
+        <tr>
+          <td>{{ role.name }}</td>
+          <td>{{ role.description }}</td>
+          <td>
+            <nz-space>
+              <button nz-button nzType="link" nzSize="small">
+                <span nz-icon nzType="edit"></span>
+                Editar
+              </button>
+              <button nz-button nzType="link" nzSize="small" nzDanger>
+                <span nz-icon nzType="delete"></span>
+                Eliminar
+              </button>
+            </nz-space>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </nz-table>
+</div>
+
